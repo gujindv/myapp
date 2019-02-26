@@ -1,0 +1,25 @@
+.container.matters
+  .row
+    .col-md-17.cardbox.matters-main
+      .matters-header
+        ul.tab-list
+          li.tab-item
+            a.tab-link href="#" 推荐
+
+      .matter-items
+        - @matters.each do |matter|
+          .matter-item
+            h2.item-title
+              - if action_name == "search"
+                = link_to "#", matter_path(matter), class: "item-link", target: "_blank"
+              - else
+                = link_to matter.title, "#", class: "item-link", target: "_blank"
+            .row.item-detail
+              .col.text-detail
+                span #{ truncate matter.introduce, length: 82 }
+            .item-footer
+              = link_to "参与讨论", "#", class: "btn button-light-blue", target: "_blank"
+              button.button-plain type="button" #{ 6 } 条观点
+
+    .col-md.sidebar-common
+      == render "sidebar"

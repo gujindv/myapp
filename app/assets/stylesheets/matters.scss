@@ -1,0 +1,165 @@
+/*  matters index page  */
+.matters.container {
+  margin-top: 10px;
+  .matters-main {
+    border-radius: 2px;
+    background-color: $cs1-origin-bg;
+    .matters-header {
+      border-bottom: 1px solid #F0F2F7;
+      // border-radius: 2px;
+      // background-color: $cs1-origin-bg;
+    }
+    .matter-items {
+      .matter-item {
+        padding: 20px;
+        border-bottom: 1px solid #F0F2F7;
+        .item-title {
+          font-size: 1.3rem;
+          font-weight: 600;
+          line-height: 1.6;
+          margin-bottom: 12px;
+          .item-link {
+          }
+        }
+        .item-detail {
+          display: flex;
+          .image-cover {
+            width: 190px;
+            height: 105px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: -4px;
+            margin-right: 18px;
+          }
+          .text-detail {
+            max-height: 100px;
+            line-height: 1.67;
+          }
+        }
+        .item-footer {
+          padding-top: 10px;
+          display: flex;
+          align-items: center;
+          a, button {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// TODO: 将 sidebar 的样式css调成普适的。
+.sidebar-common {
+  .sidebar-wrapper {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+    z-index: 100;
+    .edit-board {
+      // position: -webkit-sticky;
+      // position: sticky;
+      // top: 50px;
+      // z-index: 100;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      .wrapper {
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid #F0F2F7;
+        .item-inner {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          color: $cs1-light-black;
+          font-size: 16px;
+          &:hover, &:focus {
+            color: $cs1-dark-blue;
+          }
+          .item-name {
+            margin-bottom: 5px;
+          }
+        }
+      }
+      .board-footer {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        a {
+          display: flex;
+          justify-content: space-between;
+          button {
+            background-color: #F0F2F7;
+          }
+        }
+      }
+    }
+    .action-board {
+      padding: 20px;
+      margin-bottom: 10px;
+      .wrapper {
+        display: flex;
+        justify-content: space-around;
+      }
+      button {
+        display: inline-block;
+        // background-color: #F0F2F7;
+      }
+    }
+    .sidebar-footer {
+      padding: 0 5px;
+      .wrapper {
+        a {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .matters.container {
+    .matters-main {
+      margin-right: 10px;
+    }
+  }
+  .matter-main.container {
+    .matter-views {
+      margin-right: 10px;
+    }
+  }
+}
+
+/*  show matter page  */
+.matter-header {
+  background-color: $cs1-origin-bg;
+  .container {
+    padding: 20px 20px 16px 20px;
+    .header-content {
+      .header-main {
+        h1 {
+          font-size: 1.6rem;
+        }
+      }
+      .header-side {
+        .wrapper {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
+.matter-main.container {
+  margin-top: 10px;
+  .matter-views {
+    padding: 0 20px;
+    background-color: $cs1-origin-bg;
+    .views-header {
+      border-bottom: 1px solid #F0F2F7;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

@@ -8,5 +8,10 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
   mount StatusPage::Engine => '/'
   #mount ActionCable.server => '/cable'
-  root to: 'home#index'
+  root to: 'matters#index'
+  resources :matters, only: [:index, :show] do
+    collection do
+      get :search
+    end
+  end
 end

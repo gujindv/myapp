@@ -1,0 +1,143 @@
+
+$cs1-blue: #0084FF;
+$cs1-dark-blue: #175199;
+$cs1-gray-blue: #76839B;
+
+$cs1-black: #1A1A1A;
+$cs1-light-black: #444;
+$cs1-gray: #646464;
+$cs1-light-gray: #8590A6;
+
+$cs1-bg: #F6F6F6;
+$cs1-origin-bg: #FFFFFF;
+
+.btn {
+    padding: 0.3rem 0.75rem;
+}
+// 以下3个 button 样式要与 .btn 一起使用
+// TODO: 尝试使用 @extend .btn 引入.btn的样式
+.button-blue {
+  background-color: $cs1-blue;
+  color: #FFF;
+  &:hover, &:focus, &:active {
+    color: #FFF;
+    background-color: $cs1-blue;
+    box-shadow: none;
+  }
+}
+.button-light-blue {
+  color: $cs1-blue;
+  background-color: rgba(0,132,255,0.1);
+  &:hover, &:focus, &:active {
+    color: $cs1-blue;
+    background-color: rgba(0,132,255,0.15);
+    box-shadow: none;
+  }
+}
+.button-frame {
+  color: $cs1-blue;
+  // background-color: 
+  border-color: $cs1-blue;
+  &:hover, &:focus, &:active {
+    color: $cs1-blue;
+    background-color: rgba(0,132,255,0.06);
+    box-shadow: none;
+  }
+}
+
+// .button-plain单独使用，不与.btn 一起用
+.button-plain {
+  display: inline-block;
+  color: $cs1-light-gray;
+  background-color: transparent;
+  line-height: 1.5;
+  height: auto;
+  border: none;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover, &:focus, &:active {
+    color: $cs1-gray-blue;
+    border: none;
+    box-shadow: none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus, &.focus {
+    outline: 0;
+  }
+}
+// TODO: 在 button 上另外加上下面的样式，或者在这里用 line-height代替 padding
+// a.button-plain {
+//   padding-top: 4px;
+//   padding-bottom: 4px;
+// }
+
+
+html, body {
+  color: $cs1-black;
+  background: $cs1-bg;
+  font-family: Helvetica, Arial, "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
+  font-size: 14px;
+  letter-spacing: .03em;
+  // padding-top: 45px;
+}
+ul,ol {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+a {
+  color: $cs1-black;
+}
+a:hover, a:focus {
+  text-decoration: none;
+  color: $cs1-dark-blue;
+}
+
+
+// /* Mixin */
+// @mixin sidebar {
+//   color: $cs1-gray;
+// }
+
+/* Components */
+.cardbox {
+  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+  border-radius: 2px;
+  background-color: $cs1-origin-bg;
+}
+
+.tab-list {
+  display: block;
+  // border-bottom: 1px solid $cs1-bg;
+  > .tab-item {
+    display: inline-block;
+    padding: 0 20px;
+    .tab-link {
+      position: relative;
+      display: inline-block;
+      padding: 14px 0;
+      font-size: 16px;
+      line-height: 22px;
+      color: $cs1-black;
+      text-align: center;
+    }
+    .tab-link.is-active {
+      font-weight: 600;
+      &::after {
+        position: absolute;
+        right: 0;
+        bottom: -1px;
+        left: 0;
+        height: 3px;
+        background: $cs1-blue;
+        content: '';
+      }
+    }
+  }
+}

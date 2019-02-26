@@ -19,6 +19,5 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag "favicon.ico"
   body
-    main
-      .container
-        == yield
+    == render "matters/navbar"
+    == yield

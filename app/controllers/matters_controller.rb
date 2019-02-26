@@ -7,7 +7,6 @@ class MattersController < ApplicationController
 
   def show
     @matter = Matter.find(params[:id])
-    @views = @matter.views
   end
 
   def search
