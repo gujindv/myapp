@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
   mount StatusPage::Engine => '/'
   #mount ActionCable.server => '/cable'
-  root to: 'matters#index'
+  root 'matters#index'
   resources :matters, only: [:index, :show] do
     collection do
       get :search
