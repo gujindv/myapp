@@ -1,5 +1,5 @@
 # myapp
-The source code of myapp
+Demo for deploying with mina
 
 ## Tech stack
 
